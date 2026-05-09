@@ -26,6 +26,18 @@ export default async function InfoPage({
     <main className="min-h-screen bg-gray-100 p-6">
       <div className="max-w-2xl mx-auto space-y-6">
 
+        {page.house_notes && (
+  <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6">
+    <h2 className="text-2xl font-bold mb-3">
+      House Notes
+    </h2>
+
+    <p className="text-lg whitespace-pre-line">
+      {page.house_notes}
+    </p>
+  </div>
+)}
+
         {pets?.map((pet) => (
           <div
             key={pet.id}
