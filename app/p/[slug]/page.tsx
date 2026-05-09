@@ -33,7 +33,7 @@ export default async function QRPage({
 
         <div className="flex justify-center">
           <QRCode
-            value={`https://petcode-delta.vercel.app/info/${slug}`}
+            value={`https://petcode.app/info/${slug}`}
             size={220}
           />
         </div>
