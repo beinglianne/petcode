@@ -35,7 +35,7 @@ export default async function PetPage({
 
       <div className="mb-10">
         <QRCode
-          value={`http://localhost:3000/p/${slug}`}
+          value={`https://petcode-delta.vercel.app/p/${slug}`}
           size={180}
         />
       </div>
