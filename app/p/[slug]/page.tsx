@@ -1,62 +1,42 @@
 import { supabase } from "../../../lib/supabase";
 import QRCode from "react-qr-code";
 
-export default async function PetPage({
+export default async function QRPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
 
-  const { data: page, error } = await supabase
+  const { data: page } = await supabase
     .from("pet_pages")
     .select("*")
     .eq("slug", slug)
     .single();
 
-  if (error || !page) {
+  if (!page) {
     return <div>Page not found</div>;
   }
 
-  const { data: pets } = await supabase
-    .from("pets")
-    .select("*")
-    .eq("page_id", page.id);
-
   return (
-    <main className="max-w-2xl mx-auto p-10">
-      <h1 className="text-4xl font-bold mb-4">
-        {page.title}
-      </h1>
+    <main className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
+      <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
+        <h1 className="text-3xl font-bold mb-4">
+          {page.title}
+        </h1>
 
-      <p className="text-lg mb-8">
-        {page.message}
-      </p>
+        <div className="bg-yellow-100 border border-yellow-300 rounded-xl p-4 mb-6">
+          <p className="text-lg">
+            {page.message}
+          </p>
+        </div>
 
-      <div className="mb-10">
-        <QRCode
-          value={`https://petcode-delta.vercel.app/info/${slug}`}
-          size={180}
-        />
-      </div>
-
-      <div className="space-y-6">
-        {pets?.map((pet) => (
-          <div
-            key={pet.id}
-            className="border rounded-xl p-4"
-          >
-            <h2 className="text-2xl font-semibold">
-              {pet.name}
-            </h2>
-
-            <p>{pet.species}</p>
-
-            <p className="text-gray-600">
-              {pet.notes}
-            </p>
-          </div>
-        ))}
+        <div className="flex justify-center">
+          <QRCode
+            value={`https://petcode-delta.vercel.app/info/${slug}`}
+            size={220}
+          />
+        </div>
       </div>
     </main>
   );
