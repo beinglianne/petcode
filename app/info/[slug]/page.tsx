@@ -23,20 +23,13 @@ export default async function InfoPage({
     .eq("page_id", page.id);
 
   return (
-    <main className="max-w-2xl mx-auto p-10">
-      <h1 className="text-4xl font-bold mb-4">
-        {page.title}
-      </h1>
+    <main className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-2xl mx-auto space-y-6">
 
-      <p className="text-lg mb-8">
-        {page.message}
-      </p>
-
-      <div className="space-y-6">
         {pets?.map((pet) => (
           <div
             key={pet.id}
-            className="border rounded-xl p-4"
+            className="bg-white rounded-2xl shadow p-6"
           >
             {pet.photo_url && (
               <img
@@ -46,17 +39,20 @@ export default async function InfoPage({
               />
             )}
 
-            <h2 className="text-2xl font-semibold">
+            <h2 className="text-3xl font-bold mb-2">
               {pet.name}
             </h2>
 
-            <p>{pet.species}</p>
+            <p className="text-gray-500 mb-3">
+              {pet.species}
+            </p>
 
-            <p className="text-gray-600">
+            <p className="text-lg">
               {pet.notes}
             </p>
           </div>
         ))}
+
       </div>
     </main>
   );
