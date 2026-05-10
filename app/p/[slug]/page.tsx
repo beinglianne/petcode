@@ -26,12 +26,9 @@ export default async function QRPage({
         </h1>
 
         <div className="bg-yellow-100 border border-yellow-300 rounded-xl p-4 mb-6">
-          <a
-  href={`https://www.petcode.app/info/${slug}`}
-  className="text-lg text-blue-600 underline break-all"
->
+          <p className="text-lg">
   https://www.petcode.app/info/{slug}
-</a>
+</p>
         </div>
 
         <div className="flex justify-center">
