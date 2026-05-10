@@ -19,24 +19,30 @@ export default async function QRPage({
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-      <div className="bg-white rounded-2xl shadow-lg p-8 max-w-md w-full text-center">
-        <h1 className="text-3xl font-bold mb-4">
+    <main className="min-h-screen bg-white flex items-center justify-center p-6">
+      <div className="border-2 border-black rounded-2xl p-8 w-full max-w-lg text-center">
+
+        <h1 className="text-5xl font-bold mb-6">
           {page.title}
         </h1>
 
-        <div className="bg-yellow-100 border border-yellow-300 rounded-xl p-4 mb-6">
-          <p className="text-lg">
-  https://www.petcode.app/info/{slug}
-</p>
+        <div className="border border-black rounded-xl p-4 mb-8">
+          <p className="text-2xl leading-relaxed">
+            {page.message}
+          </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className="mb-6 flex justify-center">
           <QRCode
-            value={`https://petcode.app/info/${slug}`}
-            size={220}
+            value={`https://www.petcode.app/info/${slug}`}
+            size={280}
           />
         </div>
+
+        <p className="text-lg break-all">
+          https://www.petcode.app/info/{slug}
+        </p>
+
       </div>
     </main>
   );

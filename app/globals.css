@@ -24,3 +24,16 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+@media print {
+  body {
+    background: white;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .print-hide {
+    display: none;
+  }
+}
