@@ -1,4 +1,5 @@
 import { supabase } from "../../../lib/supabase";
+import ReactMarkdown from "react-markdown";
 
 export default async function InfoPage({
   params,
@@ -32,9 +33,11 @@ export default async function InfoPage({
       House Notes
     </h2>
 
-    <p className="text-lg whitespace-pre-line">
-      {page.house_notes}
-    </p>
+    <div className="prose max-w-none">
+  <ReactMarkdown>
+    {page.house_notes}
+  </ReactMarkdown>
+</div>
   </div>
 )}
 
