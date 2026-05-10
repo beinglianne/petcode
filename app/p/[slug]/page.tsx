@@ -26,11 +26,9 @@ export default async function QRPage({
           {page.title}
         </h1>
 
-        <div className="border border-black rounded-xl p-4 mb-8">
-          <p className="text-2xl leading-relaxed">
-            {page.message}
-          </p>
-        </div>
+        <p className="text-2xl mb-8">
+  {page.message}
+</p>
 
         <div className="mb-6 flex justify-center">
           <QRCode
