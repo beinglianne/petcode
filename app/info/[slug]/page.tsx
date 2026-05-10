@@ -33,7 +33,7 @@ export default async function InfoPage({
       House Notes
     </h2>
 
-    <div className="prose max-w-none">
+    <div className="prose max-w-none whitespace-pre-wrap">
   <ReactMarkdown>
     {page.house_notes}
   </ReactMarkdown>
