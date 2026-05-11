@@ -54,15 +54,15 @@ export default async function InfoPage({
               />
             )}
 
-            <h2 className="text-3xl font-bold mb-2">
+            <h2 className="text-3xl font-bold mb-2 text-black">
               {pet.name}
             </h2>
 
-            <p className="text-gray-500 mb-3">
+            <p className="text-gray-800 mb-3">
               {pet.species}
             </p>
 
-            <p className="text-lg">
+            <p className="text-lg text-gray-900">
               {pet.notes}
             </p>
           </div>
