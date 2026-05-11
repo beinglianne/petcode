@@ -28,7 +28,7 @@ export default async function InfoPage({
       <div className="max-w-2xl mx-auto space-y-6">
 
         {page.house_notes && (
-  <div className="bg-yellow-50 border border-yellow-200 rounded-2xl p-6">
+  <div className="bg-white border border-gray-300 rounded-2xl p-6 text-gray-900">
     <h2 className="text-2xl font-bold mb-3">
       House Notes
     </h2>
@@ -44,7 +44,7 @@ export default async function InfoPage({
         {pets?.map((pet) => (
           <div
             key={pet.id}
-            className="bg-white rounded-2xl shadow p-6"
+            className="bg-white border border-gray-300 rounded-2xl p-6"
           >
             {pet.photo_url && (
               <img
